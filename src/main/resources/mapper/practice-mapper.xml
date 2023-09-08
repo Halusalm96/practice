@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace 반드시 작성!
+    member memeber mamber
+ -->
+<mapper namespace="Practice">
+    <insert id="save" parameterType="practice">
+        insert into practice_table(id,password,name,birth,mobile) values (#{id},#{password},#{name},#{birth},#{mobile})
+    </insert>
+    <select id="login" parameterType="practice" resultType="practice">
+        select * from practice_table where id=#{id} and password=#{password}
+    </select>
+</mapper>
